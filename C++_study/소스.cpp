@@ -5,7 +5,7 @@
 #include <fstream>
 #include <iostream>
 
-// ¾îµå¹Î ÆĞ½º¿öµå
+// ì–´ë“œë¯¼ íŒ¨ìŠ¤ì›Œë“œ
 #define ADMIN_PSSWORD 1111
 using namespace std;
 
@@ -44,10 +44,10 @@ public:
 
 const char* Book::getRental() {
 	if (newBook->rental == 0) {
-		return "¹Ì´ëÃâ";
+		return "ë¯¸ëŒ€ì¶œ";
 	}
 	else {
-		return "´ëÃâÁß";
+		return "ëŒ€ì¶œì¤‘";
 	}
 };
 
@@ -68,51 +68,51 @@ char* Book::getAuthor() {
 };
 
 struct HeadNode {
-	Node* head; // Node¸¦ °¡¸®Å°´Â Æ÷ÀÎÅÍ, head
+	Node* head; // Nodeë¥¼ ê°€ë¦¬í‚¤ëŠ” í¬ì¸í„°, head
 };
 
 
 class LibraryManager {
 	HeadNode* H;
 public:
-	// ¾ÆÀÌµğ »ı¼º
+	// ì•„ì´ë”” ìƒì„±
 
-	// Å¸ÀÌÆ² Ãâ·Â
+	// íƒ€ì´í‹€ ì¶œë ¥
 	void showTitle() {
-		cout << "Digitrack µµ¼­°ü¸® ÇÁ·Î±×·¥\n";
+		cout << "Digitrack ë„ì„œê´€ë¦¬ í”„ë¡œê·¸ë¨\n";
 	}
 
-	// ¸Ş´ºÃâ·Â
+	// ë©”ë‰´ì¶œë ¥
 	void showMenu() {
 		cout << "=====================\n";
-		cout << "1. µµ¼­°Ë»ö\n";
-		cout << "2. µµ¼­¸ñ·Ï\n";
-		cout << "3. µµ¼­´ë¿©\n";
-		cout << "4. µµ¼­¹İ³³\n";
-		cout << "5. °ü¸®ÀÚ¸ğµå\n";
-		cout << "6. Á¾·á\n";
+		cout << "1. ë„ì„œê²€ìƒ‰\n";
+		cout << "2. ë„ì„œëª©ë¡\n";
+		cout << "3. ë„ì„œëŒ€ì—¬\n";
+		cout << "4. ë„ì„œë°˜ë‚©\n";
+		cout << "5. ê´€ë¦¬ìëª¨ë“œ\n";
+		cout << "6. ì¢…ë£Œ\n";
 		cout << "=====================\n";
 	}
 
-	// °ü¸®ÀÚ ¸Ş´º Ãâ·Â
+	// ê´€ë¦¬ì ë©”ë‰´ ì¶œë ¥
 	void showAdminMenu() {
 		cout << "=====================\n";
-		cout << "1. Ã¥»ğÀÔ\n";
-		cout << "2. Ã¥»èÁ¦\n";
-		cout << "3. Ã¥À§Ä¡º¯°æ\n";
-		cout << "4. ¸ŞÀÎÀ¸·Î\n";
+		cout << "1. ì±…ì‚½ì…\n";
+		cout << "2. ì±…ì‚­ì œ\n";
+		cout << "3. ì±…ìœ„ì¹˜ë³€ê²½\n";
+		cout << "4. ë©”ì¸ìœ¼ë¡œ\n";
 		cout << "=====================\n";
 	}
 
-	// ¸Ş´ºÀÔ·Â
+	// ë©”ë‰´ì…ë ¥
 	int inputMenu() {
 		int menuNum = -1;
-		cout << "¸Ş´ºÀÔ·Â:";
+		cout << "ë©”ë‰´ì…ë ¥:";
 		cin >> menuNum;
 		return menuNum;
 	}
 
-	// Ã¥ Ã£±â
+	// ì±… ì°¾ê¸°
 	void searchBook(HeadNode* H) {
 		Node* someNode;
 		try {
@@ -122,28 +122,28 @@ public:
 		}
 		catch (HeadNode*)
 		{
-			cout << "¾ÆÁ÷ head°¡ ¾ø½À´Ï´Ù.";
+			cout << "ì•„ì§ headê°€ ì—†ìŠµë‹ˆë‹¤.";
 		}
 		someNode = H->head;
 		char bookName[50];
-		cout << "Ã£À¸½Ã´Â Ã¥À» Àû¾îÁÖ¼¼¿ä : ";
+		cout << "ì°¾ìœ¼ì‹œëŠ” ì±…ì„ ì ì–´ì£¼ì„¸ìš” : ";
 		cin >> bookName;
 
 		while (someNode->name != bookName)
 		{
 			someNode = someNode->next;
 		}
-		cout << bookName << "ÀÌ Ã¥Àº ¸î ¹øÂ° Á¸ÀçÇÏ¸ç ´©°¡ ºô·Á°¬½À´Ï´Ù." << endl;
+		cout << bookName << "ì´ ì±…ì€ ëª‡ ë²ˆì§¸ ì¡´ì¬í•˜ë©° ëˆ„ê°€ ë¹Œë ¤ê°”ìŠµë‹ˆë‹¤." << endl;
 	}
 
-	// Ã¥ ¸ñ·Ï
+	// ì±… ëª©ë¡
 	void listBook(HeadNode* L) {
 
-		cout << "¾ÆÀÌµğ" << "\t\t" << "Á¦¸ñ" << "\t\t" << "Àå¸£" << "\t\t" << "ÀúÀÚ" << "\t\t" << "´ëÃâ¿©ºÎ" << "\t\t" << "Ã¥ À§Ä¡" << "\n";
+		cout << "ì•„ì´ë””" << "\t\t" << "ì œëª©" << "\t\t" << "ì¥ë¥´" << "\t\t" << "ì €ì" << "\t\t" << "ëŒ€ì¶œì—¬ë¶€" << "\t\t" << "ì±… ìœ„ì¹˜" << "\n";
 		cout << "====================================================\n";
 
 		Node* p;
-		cout << "¿¬°á¸®½ºÆ® ¸ñ·Ï = ( ";
+		cout << "ì—°ê²°ë¦¬ìŠ¤íŠ¸ ëª©ë¡ = ( ";
 		p = L->head;
 
 		while (p != NULL)
@@ -156,34 +156,34 @@ public:
 		
 	}
 
-	// Ã¥ ´ë¿©
+	// ì±… ëŒ€ì—¬
 	void rentalBook() {
 		
 	}
 
-	// Ã¥ ¹İ³³
+	// ì±… ë°˜ë‚©
 	void returnBook() {
 		
 	}
 
-	// Ã¥ À§Ä¡ º¯°æ
+	// ì±… ìœ„ì¹˜ ë³€ê²½
 	void changeBook() {
 
 
 	}
 
-	// Ã¥ »ğÀÔ
+	// ì±… ì‚½ì…
 	void addBook(HeadNode* H) {
 		
 		Node* NewNode = new Node;
 		
 		Node* LastNode;
-		cout << "========= Ã¥ Ãß°¡ =========\n";
-		cout << "Á¦¸ñ :";
+		cout << "========= ì±… ì¶”ê°€ =========\n";
+		cout << "ì œëª© :";
 		cin >> NewNode->name;
-		cout << "Àå¸£ :";
+		cout << "ì¥ë¥´ :";
 		cin >> NewNode->genre;
-		cout << "ÀúÀÚ :";
+		cout << "ì €ì :";
 		cin >> NewNode->author;
 
 		Book book = Book(NewNode->name, NewNode->genre, NewNode->author);
@@ -202,10 +202,10 @@ public:
 
 	}
 
-	// ÆÄÀÏ ÀúÀå
+	// íŒŒì¼ ì €ì¥
 
 
-	// Ã¥ »èÁ¦
+	// ì±… ì‚­ì œ
 	void deleteBook(HeadNode* H) {
 		Node* prevNode;
 		Node* delNode;
@@ -228,14 +228,14 @@ public:
 		}
 	}
 
-	// °ü¸®ÀÚ ¸ğµå
+	// ê´€ë¦¬ì ëª¨ë“œ
 	void changeAdminMode() {
 		int password = 0;
-		cout << "°ü¸®ÀÚ ¾ÏÈ£¸¦ ÀÔ·Â :";
+		cout << "ê´€ë¦¬ì ì•”í˜¸ë¥¼ ì…ë ¥ :";
 		cin >> password;
 
 		if (password != ADMIN_PSSWORD) {
-			cout << "ÆĞ½º¿öµå°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.\n";
+			cout << "íŒ¨ìŠ¤ì›Œë“œê°€ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.\n";
 			return;
 		}
 
@@ -263,24 +263,24 @@ public:
 
 	}
 
-	// Á¾·á
+	// ì¢…ë£Œ
 	void _exit() {
 		exit(0);
 	}
 
-	// ÃÊ±âÈ­
+	// ì´ˆê¸°í™”
 	void initialize() {
 
 
-		// Å¸ÀÌÆ² Ãâ·Â
+		// íƒ€ì´í‹€ ì¶œë ¥
 		showTitle();
-		// ¸Ş´ºÃâ·Â
+		// ë©”ë‰´ì¶œë ¥
 		while (true) {
 			showMenu();
-			// »ç¿ëÀÚ·Î ºÎÅÍ ¸Ş´º ¹øÈ£ ÀÔ·Â¹ŞÀ½.
+			// ì‚¬ìš©ìë¡œ ë¶€í„° ë©”ë‰´ ë²ˆí˜¸ ì…ë ¥ë°›ìŒ.
 			int menuNum = inputMenu();
 
-			// ¸Ş´º¿¡ µû¸¥ ¸Ş¼Òµå ½ÇÇà
+			// ë©”ë‰´ì— ë”°ë¥¸ ë©”ì†Œë“œ ì‹¤í–‰
 			switch (menuNum)
 			{
 			case BOOK_SEARCH:
