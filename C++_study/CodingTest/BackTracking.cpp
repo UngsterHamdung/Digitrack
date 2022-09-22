@@ -4,9 +4,9 @@
 
 using namespace std;
 
-int arr[MAX]; //ÁÖ¾îÁø ¼ıÀÚ
-bool visited[MAX]; //¹æ¹®, Áßº¹ ¹æÁö
-vector<int> vec; //Ãâ·ÂÇÒ ¼ö¿­
+int arr[MAX]; //ì£¼ì–´ì§„ ìˆ«ì
+bool visited[MAX]; //ë°©ë¬¸, ì¤‘ë³µ ë°©ì§€
+vector<int> vec; //ì¶œë ¥í•  ìˆ˜ì—´
 int cnt, n, m;
 
 void Print() {
