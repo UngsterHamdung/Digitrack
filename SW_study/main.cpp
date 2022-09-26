@@ -24,11 +24,11 @@ void Pokemon::AddPokemon(PokemonInfo* node)
 	char name[50];
 	char type[50];
 	int number;
-	cout << "Æ÷ÄÏ¸óÀÇ ÀÌ¸§À» Àû¾îÁÖ¼¼¿ë: ";
+	cout << "í¬ì¼“ëª¬ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì„¸ìš©: ";
 	cin >> name;
-	cout << "Æ÷ÄÏ¸óÀÇ ¹øÈ£¸¦ Àû¾îÁÖ¼¼¿ä: ";
+	cout << "í¬ì¼“ëª¬ì˜ ë²ˆí˜¸ë¥¼ ì ì–´ì£¼ì„¸ìš”: ";
 	cin >> number;
-	cout << "Æ÷ÄÏ¸óÀÇ Å¸ÀÔÀ» Àû¾îÁÖ¼¼¿ä: ";
+	cout << "í¬ì¼“ëª¬ì˜ íƒ€ìž…ì„ ì ì–´ì£¼ì„¸ìš”: ";
 	cin >> type;
 	node->number = number;
 	strcpy_s(node->name, strlen(name) + 1, name);
